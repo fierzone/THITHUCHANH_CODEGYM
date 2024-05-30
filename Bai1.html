@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BAITHUCHANH1</title>
+</head>
+<body>
+
+<h2>Nhập và tính toán mảng số nguyên</h2>
+
+<label for="arr">Nhập mảng số nguyên: </label><br>
+<input type="text" id="arr" name="arr"><br><br>
+
+<button onclick="showArray()">Hiển thị mảng và tính toán</button>
+<br><br>
+
+<div id="result"></div>
+
+<script>
+    function showArray() {
+        var input = document.getElementById("arr").value;
+        var arr = input.split(",").map(Number);
+        var evenSum = 0;
+        var oddSum = 0;
+
+        var Str = "Mảng: " + arr.join(", ");
+        var result = document.getElementById("result");
+        result.innerHTML = Str + "<br>";
+
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] % 2 === 0) {
+                evenSum += arr[i];
+            } else {
+                oddSum += arr[i];
+            }
+        }
+
+        var difference = evenSum - oddSum;
+        result.innerHTML += "Tổng các số chẵn: " + evenSum + "<br>";
+        result.innerHTML += "Tổng các số lẻ: " + oddSum + "<br>";
+        result.innerHTML += "Kết quả = (Tổng các số chẵn - Tổng các số lẻ) = " + difference;
+    }
+</script>
+
+</body>
+</html>

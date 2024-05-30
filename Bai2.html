@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BAITHUCHANH2</title>
+</head>
+<body>
+
+<h2>Đếm số lượng ký tự in hoa trong chuỗi</h2>
+
+<label for="str">Nhập chuỗi:</label><br>
+<input type="text" id="str" name="str"><br><br>
+
+<button onclick="demSoChuVietHoa()">Đếm số lượng ký tự in hoa</button><br><br>
+
+<div id="result"></div>
+
+<script>
+    function demSoChuVietHoa() {
+        var Str = document.getElementById("str").value;
+        var count = 0;
+
+        for (var i = 0; i < Str.length; i++) {
+            var char = Str.charAt(i);
+            if (char >= 'A' && char <= 'Z') {
+                count++;
+            }
+        }
+
+        var result = document.getElementById("result");
+        if (count > 0) {
+            result.textContent = "Số lượng ký tự in hoa trong chuỗi: " + count;
+        } else {
+            result.textContent = "The Strings is not contain upper char";
+        }
+    }
+</script>
+
+</body>
+</html>

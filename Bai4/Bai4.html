@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BAITHUCHANH4</title>
+    <script src="Phone.js"></script>
+    <script src="PhoneManager.js"></script>
+
+</head>
+<body>
+
+<h2>Quản lý điện thoại</h2>
+
+<label for="code">Mã điện thoại:</label><br>
+<input type="text" id="code"><br>
+
+<label for="name">Tên điện thoại:</label><br>
+<input type="text" id="name"><br>
+
+<label for="brand">Hãng sản xuất:</label><br>
+<input type="text" id="brand"><br>s
+
+<label for="price">Giá:</label><br>
+<input type="number" id="price" step="1000" style="width: 100px;">VNĐ
+
+
+<button onclick="addPhone()">Thêm điện thoại</button><br><br>
+
+<h3>Danh sách điện thoại</h3>
+<ul id="phoneList"></ul>

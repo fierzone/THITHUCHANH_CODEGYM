@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BAITHUCHANH3</title>
+</head>
+<body>
+
+<h2>Tìm các số nguyên tố trong mảng</h2>
+
+<label for="arr">Nhập mảng số nguyên: </label><br>
+<input type="text" id="arr" name="arr"><br><br>
+
+<button onclick="TimSoNguyenTo()">Tìm các số nguyên tố</button><br><br>
+
+<div id="result"></div>
+
+<script>
+    function soNT(num) {
+        if (num <= 1) return false;
+        if (num <= 3) return true;
+
+        if (num % 2 === 0 || num % 3 === 0) return false;
+
+        for (var i = 5; i * i <= num; i += 6) {
+            if (num % i === 0 || num % (i + 2) === 0) return false;
+        }
+
+        return true;
+    }
+
+    function TimSoNguyenTo() {
+        var arr = document.getElementById("arr").value;
+        var arr = arr.split(",").map(Number);
+        var soNguyenTo = arr.filter(soNT);
+        soNguyenTo.sort((a, b) => a - b);
+
+        var result = document.getElementById("result");
+        result.textContent = "Các số nguyên tố trong mảng : " + soNguyenTo.join(", ");
+    }
+</script>
+
+</body>
+</html>
